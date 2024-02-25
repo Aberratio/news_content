@@ -11,7 +11,7 @@ export default defineConfig({
   name: "default",
   title: "news-content",
 
-  projectId: process.env.SANITY_STUDIO__PROJECT_ID ?? "",
+  projectId: process.env.SANITY_STUDIO_API_PROJECT_ID ?? "",
   dataset: "production",
 
   plugins: [structureTool({ structure }), visionTool()],
