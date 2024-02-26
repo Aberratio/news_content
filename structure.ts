@@ -78,4 +78,10 @@ export const structure = (S: StructureBuilder) =>
         .child(
           S.documentList().title("Kategorie").filter('_type == "category"')
         ),
+      S.divider(),
+      S.listItem()
+        .title("Komenatrze")
+        .child(
+          S.documentList().title("Komenatrze").filter('_type == "comment"')
+        ),
     ]);
