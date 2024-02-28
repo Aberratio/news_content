@@ -21,7 +21,10 @@ export const structure = (S: StructureBuilder) =>
         .child(
           S.list()
             .title("Ustawienia")
-            .items([singletonListItem(S, "firstSite", "Pierwsza Strona")])
+            .items([
+              singletonListItem(S, "firstSite", "Pierwsza Strona"),
+              singletonListItem(S, "visitCounter", "Licznik odwiedzin"),
+            ])
         ),
       S.divider(),
       S.listItem()

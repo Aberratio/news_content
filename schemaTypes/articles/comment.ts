@@ -37,9 +37,19 @@ export default defineType({
       type: "number",
     }),
   ],
+
   preview: {
     select: {
-      title: "name",
+      text: "text",
+      author: "author",
+      publishedAt: "publishedAt",
+    },
+    prepare(selection) {
+      const { author, text, publishedAt } = selection;
+      return {
+        title: author && `${author} - ${publishedAt}`,
+        subtitle: text && `${text.slice(0, 100)}`,
+      };
     },
   },
 });

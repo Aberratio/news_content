@@ -5,6 +5,7 @@ import author from "./articles/author";
 import firstSite from "./settings/firstSite";
 import tab from "./navigation/tab";
 import comment from "./articles/comment";
+import visitCounter from "./settings/visitCounter";
 
 export const schemaTypes = [
   // articles
@@ -18,6 +19,7 @@ export const schemaTypes = [
 
   // settings
   firstSite,
+  visitCounter,
 
   // other
   blockContent,
