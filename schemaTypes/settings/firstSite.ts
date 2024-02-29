@@ -7,16 +7,19 @@ export default defineType({
   fields: [
     defineField({
       name: "mainTopic",
+      validation: (Rule) => Rule.required(),
       title: "Temat tygodnia",
       type: "string",
     }),
     defineField({
       name: "releaseDate",
+      validation: (Rule) => Rule.required(),
       title: "Data wydania",
       type: "date",
     }),
     defineField({
       name: "image",
+      validation: (Rule) => Rule.required(),
       title: "Image",
       type: "image",
       options: {

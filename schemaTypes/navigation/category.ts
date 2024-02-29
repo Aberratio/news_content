@@ -11,11 +11,13 @@ export default defineType({
       name: "name",
       title: "Nazwa",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
+      validation: (Rule) => Rule.required(),
       options: {
         source: "name",
         maxLength: 96,
@@ -24,6 +26,7 @@ export default defineType({
     defineField({
       name: "tab",
       title: "Zakładka",
+      validation: (Rule) => Rule.required(),
       type: "reference",
       to: { type: "tab" },
     }),

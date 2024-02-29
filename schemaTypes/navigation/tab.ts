@@ -10,16 +10,24 @@ export default defineType({
     defineField({
       name: "name",
       title: "Nazwa",
+      validation: (Rule) => Rule.required(),
       type: "string",
     }),
     defineField({
       name: "slug",
       title: "Slug",
+      validation: (Rule) => Rule.required(),
       type: "slug",
       options: {
         source: "name",
         maxLength: 96,
       },
+    }),
+    defineField({
+      name: "order",
+      validation: (Rule) => Rule.required(),
+      title: "Kolejność",
+      type: "number",
     }),
   ],
 });

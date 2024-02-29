@@ -9,6 +9,7 @@ export default defineType({
       name: "visits",
       title: "Liczba wizyt",
       type: "number",
+      readOnly: true,
     }),
   ],
   preview: {

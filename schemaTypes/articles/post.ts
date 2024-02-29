@@ -9,6 +9,7 @@ export default defineType({
       name: "title",
       title: "Tytuł",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "slug",
@@ -18,17 +19,33 @@ export default defineType({
         source: "title",
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "author",
       title: "Autor",
       type: "reference",
       to: { type: "author" },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "category",
+      title: "Kategoria",
+      validation: (Rule) => Rule.required(),
+      type: "reference",
+      to: { type: "category" },
+    }),
+    defineField({
+      name: "publishedAt",
+      title: "Data publikacji",
+      type: "date",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "mainImage",
       title: "Zdjęcie główne",
       type: "image",
+      validation: (Rule) => Rule.required(),
       options: {
         hotspot: true,
       },
@@ -44,27 +61,6 @@ export default defineType({
           title: "Opis",
         },
       ],
-    }),
-    defineField({
-      name: "category",
-      title: "Kategoria",
-      type: "reference",
-      to: { type: "category" },
-    }),
-    defineField({
-      name: "publishedAt",
-      title: "Data publikacji",
-      type: "date",
-    }),
-    defineField({
-      name: "lead",
-      title: "Lead",
-      type: "text",
-    }),
-    defineField({
-      name: "body",
-      title: "Treść",
-      type: "blockContent",
     }),
     defineField({
       name: "images",
@@ -97,19 +93,36 @@ export default defineType({
       },
     }),
     defineField({
+      name: "lead",
+      title: "Lead",
+      type: "text",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "body",
+      title: "Treść",
+      type: "blockContent",
+    }),
+    defineField({
       name: "likes",
       title: "Polubienia",
       type: "number",
+      initialValue: 0,
+      readOnly: true,
     }),
     defineField({
       name: "dislikes",
       title: "Łapki w dół",
       type: "number",
+      initialValue: 0,
+      readOnly: true,
     }),
     defineField({
       name: "views",
       title: "Wyświetlania",
       type: "number",
+      initialValue: 0,
+      readOnly: true,
     }),
   ],
 

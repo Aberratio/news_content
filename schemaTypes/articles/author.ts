@@ -8,12 +8,14 @@ export default defineType({
     defineField({
       name: "name",
       title: "Wyświetlana nazwa",
+      validation: (Rule) => Rule.required(),
       type: "string",
     }),
     defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
+      validation: (Rule) => Rule.required(),
       options: {
         source: "name",
         maxLength: 96,
