@@ -26,7 +26,7 @@ export default defineType({
     defineField({
       name: "order",
       validation: (Rule) => Rule.required(),
-      title: "Kolejność",
+      title: "Kolejność (im mniejsza liczba, tym bardziej z lewej strony)",
       type: "number",
     }),
   ],

@@ -24,6 +24,19 @@ export const structure = (S: StructureBuilder) =>
             .items([
               singletonListItem(S, "firstSite", "Pierwsza Strona"),
               singletonListItem(S, "visitCounter", "Licznik odwiedzin"),
+              singletonListItem(S, "pinnedPost", "Przypięta publikacja"),
+            ])
+        ),
+      S.listItem()
+        .title("Reklamy")
+        .icon(CogIcon)
+        .child(
+          S.list()
+            .title("Reklamy")
+            .items([
+              singletonListItem(S, "firstSite", "Pierwsza Strona"),
+              singletonListItem(S, "visitCounter", "Licznik odwiedzin"),
+              singletonListItem(S, "pinnedPost", "Przypięta publikacja"),
             ])
         ),
       S.divider(),
