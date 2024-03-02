@@ -5,7 +5,12 @@ import { schemaTypes } from "./schemaTypes";
 import { structure } from "./structure";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
-const singletonTypes = new Set(["firstSite", "pinnedPost", "visitCounter"]);
+const singletonTypes = new Set([
+  "firstSite",
+  "pinnedPost",
+  "visitCounter",
+  "adds",
+]);
 
 export default defineConfig({
   name: "default",

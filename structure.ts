@@ -9,7 +9,12 @@ const singletonListItem = (
   S.listItem()
     .title(title || typeName)
     .id(typeName)
-    .child(S.document().schemaType(typeName).documentId(typeName));
+    .child(
+      S.document()
+        .schemaType(typeName)
+        .documentId(typeName)
+        .title(title || typeName)
+    );
 
 export const structure = (S: StructureBuilder) =>
   S.list()
@@ -32,11 +37,23 @@ export const structure = (S: StructureBuilder) =>
         .icon(CogIcon)
         .child(
           S.list()
-            .title("Reklamy")
+            .title("Ustawienia")
             .items([
-              singletonListItem(S, "firstSite", "Pierwsza Strona"),
-              singletonListItem(S, "visitCounter", "Licznik odwiedzin"),
-              singletonListItem(S, "pinnedPost", "Przypięta publikacja"),
+              singletonListItem(S, "adds", "Reklamy na stronie"),
+              S.listItem()
+                .title("Archiwum reklamy boxowe")
+                .child(
+                  S.documentList()
+                    .title("Reklamy boxowe")
+                    .filter('_type == "boxAdd"')
+                ),
+              S.listItem()
+                .title("Archiwum reklamy banerowych")
+                .child(
+                  S.documentList()
+                    .title("Reklamy baneorwe")
+                    .filter('_type == "bannerAdd"')
+                ),
             ])
         ),
       S.divider(),
