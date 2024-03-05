@@ -12,8 +12,9 @@ import post from "./articles/post";
 import category from "./navigation/category";
 import tab from "./navigation/tab";
 
-// settings
+// settings 
 import firstSite from "./settings/firstSite";
+import mainTopic from "./settings/mainTopic";
 import pinnedPost from "./settings/pinnedPost";
 import visitCounter from "./settings/visitCounter";
 
@@ -38,6 +39,7 @@ export const schemaTypes = [
 
   // settings
   firstSite,
+  mainTopic,
   pinnedPost,
   visitCounter,
 

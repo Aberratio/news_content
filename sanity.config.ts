@@ -7,6 +7,7 @@ import { structure } from "./structure";
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
 const singletonTypes = new Set([
   "firstSite",
+  "mainTopic",
   "pinnedPost",
   "visitCounter",
   "adds",

@@ -26,8 +26,9 @@ export const structure = (S: StructureBuilder) =>
         .child(
           S.list()
             .title("Ustawienia")
-            .items([
-              singletonListItem(S, "firstSite", "Pierwsza Strona"),
+            .items([ 
+              singletonListItem(S, "firstSite", "Pierwsza strona"),
+              singletonListItem(S, "mainTopic", "Temat główny"),
               singletonListItem(S, "visitCounter", "Licznik odwiedzin"),
               singletonListItem(S, "pinnedPost", "Przypięta publikacja"),
             ])
