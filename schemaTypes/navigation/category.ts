@@ -30,5 +30,26 @@ export default defineType({
       type: "reference",
       to: { type: "tab" },
     }),
+    defineField({
+      name: "image",
+      title: "Obrazek",
+      validation: (Rule) => Rule.required(),
+      type: "seoImage",
+    }),
+    defineField({
+      name: "description",
+      title: "Opis - jakich wiadomości możemy spodziewać się w tej kategorii",
+      validation: (Rule) => Rule.required(),
+      type: "text",
+    }),
   ],
+  preview: {
+    select: {
+      title: "name",
+      media: "image",
+    },
+    prepare(selection) {
+      return { ...selection };
+    },
+  },
 });

@@ -29,5 +29,26 @@ export default defineType({
       title: "Kolejność (im mniejsza liczba, tym bardziej z lewej strony)",
       type: "number",
     }),
+    defineField({
+      name: "image",
+      title: "Obrazek",
+      validation: (Rule) => Rule.required(),
+      type: "seoImage",
+    }),
+    defineField({
+      name: "description",
+      title: "Opis - jakich wiadomości możemy spodziewać się w tej zakładce",
+      validation: (Rule) => Rule.required(),
+      type: "text",
+    }),
   ],
+  preview: {
+    select: {
+      title: "name",
+      media: "image",
+    },
+    prepare(selection) {
+      return { ...selection };
+    },
+  },
 });

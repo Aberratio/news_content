@@ -18,7 +18,8 @@ import pinnedPost from "./settings/pinnedPost";
 import visitCounter from "./settings/visitCounter";
 
 // other
-import blockContent from "./blockContent";
+import blockContent from "./blockContent"; 
+import seoImage from "./objects/seoImage"; 
 
 export const schemaTypes = [
   // adds
@@ -42,4 +43,5 @@ export const schemaTypes = [
 
   // other
   blockContent,
+  seoImage
 ];

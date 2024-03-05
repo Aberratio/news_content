@@ -15,7 +15,12 @@ export default defineType({
       name: "boxAdds",
       title: "Reklamy boxowe",
       type: "array",
-      of: [{ type: "boxAdd" }],
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "boxAdd" }],
+        },
+      ],
     }),
   ],
   preview: {
