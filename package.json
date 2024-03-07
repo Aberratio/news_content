@@ -8,6 +8,10 @@
     "dev": "sanity dev",
     "start": "sanity start",
     "build": "sanity build",
+    "login": "sanity login",
+    "clear": "sanity dataset delete production --force && sanity dataset create production --visibility private",
+    "export": "sanity dataset export production data.tar.gz",
+    "import": "sanity dataset import data.tar.gz production --replace --replace-assets",
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy"
   },

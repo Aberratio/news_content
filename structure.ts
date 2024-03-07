@@ -31,6 +31,7 @@ export const structure = (S: StructureBuilder) =>
               singletonListItem(S, "mainTopic", "Temat główny"),
               singletonListItem(S, "visitCounter", "Licznik odwiedzin"),
               singletonListItem(S, "pinnedPost", "Przypięta publikacja"),
+              singletonListItem(S, "generalSeo", "(W budowie)"),
             ])
         ),
       S.listItem()
