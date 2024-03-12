@@ -3,6 +3,7 @@ import { defineType } from 'sanity'
 export default defineType ({
     name: 'seoImage',
     type: 'image',
+    title: "Obrazek",
     fields: [
       {
         name: 'alt',
@@ -16,6 +17,11 @@ export default defineType ({
         options: {
           isHighlighted: true,
         }
-      }
+      },
+      {
+        name: "description",
+        type: "text",
+        title: "Opis",
+      },
     ]
   }) 
