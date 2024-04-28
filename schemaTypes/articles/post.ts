@@ -29,9 +29,25 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "isAdd",
+      title: "Czy artykuł jest reklamą?",
+      type: "boolean",
+    }),
+    defineField({
       name: "category",
       title: "Kategoria",
-      validation: (Rule) => Rule.required(),
+      validation: rule => rule.custom((category, context) => {
+
+        if (context.document.isAdd && category) {
+          return "Dla artykułów typu rekalama nie możesz mieć wybranej kategorii."
+        }
+
+        if (!context.document.isAdd && !category) {
+          return 'Wprowadź kategorię!'
+        }
+        
+        return true
+      }),
       type: "reference",
       to: { type: "category" },
     }),
@@ -122,7 +138,6 @@ export default defineType({
       title: "Wyświetlania",
       type: "number",
       initialValue: 0,
-      readOnly: true,
     }),
   ],
 
