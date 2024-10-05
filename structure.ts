@@ -1,18 +1,20 @@
 import { StructureBuilder } from "sanity/structure";
-import { FcSettings } from "react-icons/fc";
-import { FcNews } from "react-icons/fc";
-import { FcFilledFilter } from "react-icons/fc";
-import { FcBusinesswoman } from "react-icons/fc";
-import { FcGenealogy } from "react-icons/fc";
-import { FcFlowChart } from "react-icons/fc";
-import { FcComments } from "react-icons/fc";
-import { FcInTransit } from "react-icons/fc";
-import { FcTemplate } from "react-icons/fc";
-import { FcReuse } from "react-icons/fc";
+import {
+  FcSettings,
+  FcNews,
+  FcFilledFilter,
+  FcBusinesswoman,
+  FcGenealogy,
+  FcFlowChart,
+  FcComments,
+  FcInTransit,
+  FcTemplate,
+  FcReuse,
+  FcGallery,
+  FcIdea,
+  FcPositiveDynamic,
+} from "react-icons/fc";
 import { IconType } from "react-icons";
-import { FcGallery } from "react-icons/fc";
-import { FcIdea } from "react-icons/fc";
-import { FcPositiveDynamic } from "react-icons/fc";
 import { BsFillPinAngleFill } from "react-icons/bs";
 import { IoBuildOutline } from "react-icons/io5";
 
@@ -58,7 +60,12 @@ export const structure = (S: StructureBuilder) =>
                 "Przypięta publikacja",
                 BsFillPinAngleFill
               ),
-              singletonListItem(S, "generalSeo", "(W budowie)", IoBuildOutline),
+              singletonListItem(
+                S,
+                "generalConfig",
+                "(W budowie)",
+                IoBuildOutline
+              ),
             ])
         ),
       S.listItem()

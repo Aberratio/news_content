@@ -12,16 +12,17 @@ import post from "./articles/post";
 import category from "./navigation/category";
 import tab from "./navigation/tab";
 
-// settings  
+// settings
 import firstSite from "./settings/firstSite";
-import generalSeo from "./settings/generalSeo";
+import generalConfig from "./settings/generalConfig";
 import mainTopic from "./settings/mainTopic";
 import pinnedPost from "./settings/pinnedPost";
 import visitCounter from "./settings/visitCounter";
 
 // other
-import blockContent from "./blockContent"; 
-import seoImage from "./objects/seoImage"; 
+import blockContent from "./blockContent";
+import expandedText from "./expandedText";
+import seoImage from "./objects/seoImage";
 
 export const schemaTypes = [
   // adds
@@ -40,12 +41,13 @@ export const schemaTypes = [
 
   // settings
   firstSite,
-  generalSeo,
+  generalConfig,
   mainTopic,
   pinnedPost,
   visitCounter,
 
   // other
   blockContent,
-  seoImage
+  expandedText,
+  seoImage,
 ];
