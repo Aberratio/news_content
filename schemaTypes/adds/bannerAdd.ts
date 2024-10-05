@@ -14,14 +14,14 @@ export default defineType({
     defineField({
       name: "link",
       title: "Przekierowanie (link do reklamodawcy)",
-      validation: rule => rule.custom((link, context) => {
+      validation: (rule) =>
+        rule.custom((link, context) => {
+          if (context?.document?.post && link) {
+            return "To pole oraz 'Artykuł powiązany z reklamą' (pole poniżej) nie mogą być wypełnione jednocześnie.";
+          }
 
-        if (context.document.post && link) {
-          return "To pole oraz 'Artykuł powiązany z reklamą' (pole poniżej) nie mogą być wypełnione jednocześnie."
-        }
-
-        return true
-      }),
+          return true;
+        }),
       description:
         "Wypełnij tylko, jeżeli po kliknięciu w reklamę ma się otworzyć inna strona. Przykładowa zawartość tego pola to: https://google.com",
       type: "string",
@@ -29,14 +29,14 @@ export default defineType({
     defineField({
       name: "post",
       title: "Artykuł powiązany z reklamą",
-      validation: rule => rule.custom((post, context) => {
+      validation: (rule) =>
+        rule.custom((post, context) => {
+          if (context?.document?.link && post) {
+            return "To pole oraz 'Przekierowanie (link do reklamodawcy)' (pole powyżej) nie mogą być wypełnione jednocześnie.";
+          }
 
-        if (context.document.link && post) {
-          return "To pole oraz 'Przekierowanie (link do reklamodawcy)' (pole powyżej) nie mogą być wypełnione jednocześnie."
-        }
-        
-        return true
-      }),
+          return true;
+        }),
       description:
         "Wypełnij tylko, jeżeli po kliknięciu w reklamę ma się otworzyć konkretny artykuł na stronie Głosu Milicza.",
       type: "reference",

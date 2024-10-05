@@ -36,18 +36,18 @@ export default defineType({
     defineField({
       name: "category",
       title: "Kategoria",
-      validation: rule => rule.custom((category, context) => {
+      validation: (rule) =>
+        rule.custom((category, context) => {
+          if (context?.document?.isAdd && category) {
+            return "Dla artykułów typu rekalama nie możesz mieć wybranej kategorii.";
+          }
 
-        if (context.document.isAdd && category) {
-          return "Dla artykułów typu rekalama nie możesz mieć wybranej kategorii."
-        }
+          if (!context?.document?.isAdd && !category) {
+            return "Wprowadź kategorię!";
+          }
 
-        if (!context.document.isAdd && !category) {
-          return 'Wprowadź kategorię!'
-        }
-        
-        return true
-      }),
+          return true;
+        }),
       type: "reference",
       to: { type: "category" },
     }),

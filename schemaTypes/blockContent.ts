@@ -10,13 +10,14 @@ export default defineType({
       type: "block",
       styles: [
         { title: "Normal", value: "normal" },
-        { title: "Quote", value: "blockquote" },
+        { title: "Nagłówek", value: "h3" },
+        { title: "Cytat", value: "blockquote" },
       ],
-      lists: [{ title: "Bullet", value: "bullet" }],
+      lists: [{ title: "Lista wypunktowana", value: "bullet" }],
       marks: {
         decorators: [
-          { title: "Strong", value: "strong" },
-          { title: "Emphasis", value: "em" },
+          { title: "Pogrubienie", value: "strong" },
+          { title: "Kursywa", value: "em" },
         ],
         annotations: [
           {
@@ -36,6 +37,9 @@ export default defineType({
     }),
     defineArrayMember({
       type: "seoImage",
+    }),
+    defineArrayMember({
+      type: "code",
     }),
   ],
 });

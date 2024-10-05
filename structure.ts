@@ -13,6 +13,7 @@ import {
   FcGallery,
   FcIdea,
   FcPositiveDynamic,
+  FcDocument,
 } from "react-icons/fc";
 import { IconType } from "react-icons";
 import { BsFillPinAngleFill } from "react-icons/bs";
@@ -63,9 +64,10 @@ export const structure = (S: StructureBuilder) =>
               singletonListItem(
                 S,
                 "generalConfig",
-                "(W budowie)",
+                "Konfiguracja",
                 IoBuildOutline
               ),
+              singletonListItem(S, "rules", "Regulamin", FcDocument),
             ])
         ),
       S.listItem()
