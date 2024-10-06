@@ -120,6 +120,17 @@ export default defineType({
       type: "blockContent",
     }),
     defineField({
+      name: "recommendations",
+      title: "Rekomendacje",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "post" }],
+        },
+      ],
+    }),
+    defineField({
       name: "likes",
       title: "Polubienia",
       type: "number",

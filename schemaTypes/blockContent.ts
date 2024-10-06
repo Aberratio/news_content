@@ -41,5 +41,8 @@ export default defineType({
     defineArrayMember({
       type: "code",
     }),
+    defineArrayMember({
+      type: "cluster",
+    }),
   ],
 });

@@ -24,6 +24,8 @@ import rules from "./onePages/rules";
 
 // other
 import blockContent from "./blockContent";
+import cluster from "./objects/cluster";
+import clusterItems from "./objects/clusterItems";
 import expandedText from "./expandedText";
 import seoImage from "./objects/seoImage";
 
@@ -54,6 +56,8 @@ export const schemaTypes = [
 
   // other
   blockContent,
+  cluster,
+  clusterItems,
   expandedText,
   seoImage,
 ];
