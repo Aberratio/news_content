@@ -42,6 +42,11 @@ export default defineType({
       validation: (Rule) => Rule.required(),
       type: "text",
     }),
+    defineField({
+      name: "color",
+      title: "Kolor",
+      type: "color",
+    }),
   ],
   preview: {
     select: {

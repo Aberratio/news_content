@@ -4,6 +4,7 @@ import { visionTool } from "@sanity/vision";
 import { codeInput } from "@sanity/code-input";
 import { schemaTypes } from "./schemaTypes";
 import { structure } from "./structure";
+import { colorInput } from "@sanity/color-input";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
 const singletonTypes = new Set([
@@ -22,7 +23,12 @@ export default defineConfig({
   projectId: process.env.SANITY_STUDIO_API_PROJECT_ID ?? "",
   dataset: "production",
 
-  plugins: [structureTool({ structure }), visionTool(), codeInput()],
+  plugins: [
+    structureTool({ structure }),
+    visionTool(),
+    codeInput(),
+    colorInput(),
+  ],
 
   schema: {
     types: schemaTypes,
