@@ -11,7 +11,7 @@ import post from "./articles/post";
 // navigation
 import category from "./navigation/category";
 import tab from "./navigation/tab";
-
+import tabAction from "./navigation/tabAction";
 // settings
 import firstSite from "./settings/firstSite";
 import generalConfig from "./settings/generalConfig";
@@ -43,7 +43,7 @@ export const schemaTypes = [
   // navigation
   category,
   tab,
-
+  tabAction,
   // settings
   firstSite,
   generalConfig,
